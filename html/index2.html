@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <title>Basic D3 Tutorial Youtube d3Vienno</title>
+  
+</head>
+<body>
+<h1>Vizualizing Data Tuorial, Video #4</h1>
+
+
+<script>
+
+  // the data array we are going to bind
+  var dataArray = [20, 40, 50];
+
+  // our canvas that d3 selects and its attributes
+  var canvas = d3.select("body")
+    .append("svg")
+    .attr("width", 500) // set the max width of the container
+    .attr("height", 500); // set the max height of the container
+
+    // our bars that will display the data array
+  var bars = canvas.selectAll("rect") // selecting all of the rectangles the data formed
+                .data(dataArray) // the data method that we put in the dataArray as a parameter
+                .enter() // creates placeholders for the data elements that dont have a place because the bars were not created yet
+                    .append("rect") // bars are basically rectangles and the appends adds svg rectangles to our canvas
+                    .attr("width", function(d) { return d * 10;}) // function that loops throught the array, represented by the "d" argument, and gives it a width of that array in pixels
+                    .attr("height", 50) // hardcoded height that doesnt have to be interpreted by the data like the width was
+                    .attr("y", function(d, i) { return i * 100 }) // creates a y-axis so the biggest rectangle doesnt engulf the smaller ones
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

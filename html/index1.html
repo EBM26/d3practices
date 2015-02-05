@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<title>Basic D3 Tutorial Youtube d3Vienno</title>
+	
+</head>
+<body>
+<h1>Basic SVG Shapes Tutorial, Video #3</h1>
+
+
+<script>
+  // makes a canvas by having d3 select the body and using svg with it
+  // and giving svg the necessary attributes of weight and height
+	var canvas = d3.select("body")
+	  .append("svg")
+	  .attr("width", 500) // set the max width of the container
+	  .attr("height", 500); // set the max height of the container
+
+    // creates a circle by appending (adding) the circle svg method 
+	var circle = canvas.append("circle")
+					   .attr("cx", 250) // svg circle x-axis
+					   .attr("cy", 250) // svg circle y-axis
+					   .attr("r", 50) // svg circle radius
+					   .attr("fill", "red"); // makes color
+
+
+    // creates a rectangle by appending the svg rectangle method
+    // no color attr so the default is black
+	var rectangle = canvas.append("rect")
+						  .attr("width", 100) // rect width
+						  .attr("height", 50); // rect height
+
+    // creates a line by appending the svg line method
+	var line = canvas.append("line")
+				     .attr("x1", 0) // starting line x-axis (each page has two axises, sort of like horizontal and vertical, here x is the horizontal) coordinate (the beggining point)
+				     .attr("y1", 100) // starting line y-axis(vertical) coordinate (the beggining point)
+				     .attr("x2", 400) // ending line x-axis coordinate (the ending point)
+				     .attr("y2", 400) // ending line y-axis coordinate (the ending point)
+				     .attr("stroke", "green") // color of the line so you can see it clearly
+				     .attr("stroke-width", 10); // width of the line
+
+</script>
+
+
+
+</body>
+</html>

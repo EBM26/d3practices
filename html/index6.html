@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <title>ddelimited.io line chart tutorial</title>
+  
+</head>
+<body>
+<h1>Line Chart Trial #1</h1>
+ <a href= "http://www.delimited.io/blog/2014/3/3/creating-multi-series-charts-in-d3-lines-bars-area-and-streamgraphs">This is the site I used</a>
+<script>
+
+d3.csv("crunch.csv", function (error, data) {
+  console.log("Inital Data", data);
+
+  var labelVar = 'quarter'; //A
+  var varNames = d3.keys(data[0])
+      .filter(function (key) { return key !== labelVar;}); //B
+
+  color.domain(varNames); //C
+
+  var seriesData = varNames.map(function (name) { //D
+    return {
+      name: name,
+      values: data.map(function (d) {
+        return {name: name, label: d[labelVar], value: +d[name]};
+      })
+    };
+  });
+  console.log("seriesData", seriesData);
+
+  x.domain(data.map(function (d) { return d.quarter; })); //E
+  y.domain([
+    d3.min(seriesData, function (c) { 
+      return d3.min(c.values, function (d) { return d.value; });
+    }),
+    d3.max(seriesData, function (c) { 
+      return d3.max(c.values, function (d) { return d.value; });
+    })
+  ]);
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

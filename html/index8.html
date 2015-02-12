@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <title>Basic D3 Tutorial Youtube d3Vienno</title> 
+  
+</head>
+<body>
+<h1>Loading External Data, Video #10</h1> <!-- teaches using d3 on "external" data -->
+TEST
+
+<script>
+
+  d3.json("./example.json", function (data) { // grabbing our json data throught d3
+    console.log(data);
+
+    var canvas = d3.select("body") // creates our usual canvas for the display of data
+    ; 
+
+
+    for(var i = 0; i < data.length;i++) {
+      console.log(data[i]);
+    canvas.append("svg")
+          .attr("width", 500)     
+          .attr("height", 500).selectAll("rect")
+        .data(data[i].scores) // gets the data using the data argument
+        .enter()  // common placeholder 
+            .append("rect")
+            .attr("width", function(d, i ) { return (d.score) }) // using the argument "d" for looping throught the data object and calling on the object key you want the width to represent, in this case "age"
+            .attr("height", 40)
+            .attr("y", function(d, i) { return  d.hour * 5 }) // "y" property is a function of the index 
+            .attr("fill", "blue");
+}
+
+    canvas.selectAll("text") // adding text to bars 
+          .data(data)
+          .enter()
+              .append("text")
+              .attr("fill", "black")
+              .attr("y", function(d, i) { return i * 50 + 20 }) // the "+20" is so the name can be displayed inside the bars properly
+              .text(function (d) { return d.name; }) // specifies what content of text by looping through json object and parsing name key 
+    })
+</script>
+
+
+
+</body>
+</html>

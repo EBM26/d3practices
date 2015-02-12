@@ -2,53 +2,115 @@
 <html>
 <head>
   <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-  <title>ddelimited.io line chart tutorial</title>
+  <title>sitepoint.com line chart tutorial</title>
   
 </head>
 <body>
 <h1>Line Chart Trial #1</h1>
- <a href= "http://www.delimited.io/blog/2014/3/3/creating-multi-series-charts-in-d3-lines-bars-area-and-streamgraphs">This is the site I used</a>
+ <a href= "http://www.sitepoint.com/creating-simple-line-bar-charts-using-d3-js/">This is the site I used</a>
+
+<svg id="visualisation" width="1000" height="1000"></svg>
 <script>
 
-d3.csv("crunch.csv", function (error, data) {
-  console.log("Inital Data", data);
+function InitChart() {
 
-  var labelVar = 'quarter'; //A
-  var varNames = d3.keys(data[0])
-      .filter(function (key) { return key !== labelVar;}); //B
+var lineData = [{
+  x: 1,
+  y: 5
+}, {
+  x: 20,
+  y: 20
+}, {
+  x: 40,
+  y: 10
+}, {
+  x: 60,
+  y: 40
+}, {
+  x: 80,
+  y: 5
+}, {
+  x: 100,
+  y: 60
+}];
 
-  color.domain(varNames); //C
 
-  var seriesData = varNames.map(function (name) { //D
-    return {
-      name: name,
-      values: data.map(function (d) {
-        return {name: name, label: d[labelVar], value: +d[name]};
-      })
-    };
-  });
-  console.log("seriesData", seriesData);
 
-  x.domain(data.map(function (d) { return d.quarter; })); //E
-  y.domain([
-    d3.min(seriesData, function (c) { 
-      return d3.min(c.values, function (d) { return d.value; });
-    }),
-    d3.max(seriesData, function (c) { 
-      return d3.max(c.values, function (d) { return d.value; });
+var vis = d3.select('#visualisation'), // var that selects div and sets d3 size
+      WIDTH = 800, 
+      HEIGHT = 800, 
+      MARGINS = {
+          top: 20, 
+          right: 20, 
+          bottom: 20, 
+          left: 50, 
+      },
+
+      // sets scales and ranges of the graph
+    xRange = d3.scale.linear().range([MARGINS.left, WIDTH - MARGINS.right]).domain([d3.m 
+      in(lineData, function(d) {
+        return d.x;
+        }), d3.max(lineData, function(d) {
+        return d.x;
+        })]),
+    yRange = d3.scale.linear().range([HEIGHT - MARGINS.top, MARGINS.bottom]).domain([d3.min(lineData, function(d) {
+        return d.y;
+        }), d3.max(lineData, function(d) {
+        return d.y;
+         })]),
+
+     xAxis = d3.svg.axis() // makes the x-axis
+      .scale(xRange)
+      .tickSize(5)
+      .tickSubdivide(true),
+    yAxis = d3.svg.axis() // makes the y-axis
+      .scale(yRange)
+      .tickSize(5)
+      .orient('left')
+      .tickSubdivide(true);
+
+    vis.append('svg:g') // appends the svg group, gives it attr, positioning, and calls x-axis var
+      .attr('class', 'x axis')
+      .attr('transform', 'translate(0,' + (HEIGHT - MARGINS.bottom) + ')')
+      .call(xAxis);
+ 
+    vis.append('svg:g') // appends the svg group, gives it attr, positioning, and calls y-axis var
+      .attr('class', 'y axis')
+      .attr('transform', 'translate(' + (MARGINS.left) + ',0)')
+      .call(yAxis);
+
+    
+    var lineFunc = d3.svg.line()
+      .x(function(d) {
+      return xRange(d.x);
     })
-  ]);
+      .y(function(d) {
+      return yRange(d.y);
+    })
+      .interpolate('linear');
 
+    vis.append('svg:path')
+      .attr('d', lineFunc(lineData))
+      .attr('stroke', 'blue')
+      .attr('stroke-width', 4)
+      .attr('fill', 'none');
 
+    }
 
-
-
-
-
-
-
+    InitChart();
 
 </script>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+

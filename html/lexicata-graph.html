@@ -74,23 +74,23 @@ var svg = d3.select("body")
               "translate(" + margin.left + "," + margin.top + ")");
 
 
- var playerScores = [];
+ var sourceCount = [];
 
 
 // Get the data from the json file on hand (this is where you would call API data if you have it)
-d3.json("example.json", function(error, data) {
+d3.json("lexicata.json", function(error, data) {
     data.forEach(function(d) {
         d.scores.forEach(function(e){
             e.date = setHour(e.hour);
             e.name = d.name; // "name" is json key which gives the value of the palyers name
             
-            playerScores.push(e);
+            sourceCount.push(e);
         })
     
 
    });
-     console.log(playerScores);
-     data = playerScores;
+     console.log(sourceCount);
+     data = sourceCount;
     // Scale the range of the data
     x.domain(d3.extent(data, function(d) { return d.date; })); // width of graph line (where it starts on canvas length)
     y.domain([0, d3.max(data, function(d) { return d.score; })]); // width of graph line (where it starts on canvas height)

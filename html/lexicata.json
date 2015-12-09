@@ -1,12 +1,7 @@
+
 [
+	{ "source": "Facebook", "weekCount": [{"week": 5, "count": 1}, {"week": 4, "count": 2}, {"week": 3, "count": 3}, {"week": 2, "count": 1}, {"week": 1, "count": 3}, {"week": 0, "count": 1}]},
+	{ "source": "Avvo", "weekCount": [{"week": 5, "count": 2}, {"week": 4, "count": 0}, {"week": 3, "count": 2}, {"week": 2, "count": 3}, {"week": 1, "count": 3}, {"week": 0, "count": 2}]},
+	{ "source": "Linkedin", "weekCount": [{"week": 5, "count": 3}, {"week": 4, "count": 3}, {"week": 3, "count": 0}, {"week": 2, "count": 3}, {"week": 1, "count": 3}, {"week": 0, "count": 2}]}
 
-["Week", "Facebook", "Avvo", "Linkedin"],
-["5 Weeks ago", 1, 2, 3],
-["4 Weeks ago", 2, 0, 3],
-["3 Weeks ago", 3, 2, 0],
-["2 Weeks ago", 1, 3, 3],
-["Last Week", 3, 3, 3],
-["This Week", 1, 2, 2]
-
-]
-
+]	

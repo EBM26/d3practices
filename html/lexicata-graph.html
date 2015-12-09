@@ -40,9 +40,9 @@ var margin = {top: 30, right: 20, bottom: 70, left: 50},
     height = 600 - margin.top - margin.bottom;
 
 // Parse the date / time
-var setHour = function(hour) {
+var setHour = function(week) {
     date = new Date();
-    date.setHours(hour);
+    date.setHours(week);
     date.setMinutes(0);
     date.setSeconds(0);
     return date;
@@ -80,9 +80,9 @@ var svg = d3.select("body")
 // Get the data from the json file on hand (this is where you would call API data if you have it)
 d3.json("lexicata.json", function(error, data) {
     data.forEach(function(d) {
-        d.scores.forEach(function(e){
-            e.date = setHour(e.hour);
-            e.name = d.name; // "name" is json key which gives the value of the palyers name
+        d.weekCount.forEach(function(e){
+            e.date = setHour(e.week);
+            e.source = d.source; // "source" is json key which gives the value of the palyers source
             
             sourceCount.push(e);
         })
@@ -95,9 +95,9 @@ d3.json("lexicata.json", function(error, data) {
     x.domain(d3.extent(data, function(d) { return d.date; })); // width of graph line (where it starts on canvas length)
     y.domain([0, d3.max(data, function(d) { return d.score; })]); // width of graph line (where it starts on canvas height)
 
-    // Nest the entries by symbol, meaning it creates a toggable symbol that is the name of the player
+    // Nest the entries by symbol, meaning it creates a toggable symbol that is the source of the player
     var dataNest = d3.nest()
-        .key(function(d) {return d.name;})
+        .key(function(d) {return d.source;})
         .entries(data);
 
     var color = d3.scale.category10();   // set the colour scale

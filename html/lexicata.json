@@ -1,7 +1,18 @@
 
 [
-	{ "source": "Facebook", "weekCount": [{"week": 5, "count": 1}, {"week": 4, "count": 2}, {"week": 3, "count": 3}, {"week": 2, "count": 1}, {"week": 1, "count": 3}, {"week": 0, "count": 1}]},
-	{ "source": "Avvo", "weekCount": [{"week": 5, "count": 2}, {"week": 4, "count": 0}, {"week": 3, "count": 2}, {"week": 2, "count": 3}, {"week": 1, "count": 3}, {"week": 0, "count": 2}]},
-	{ "source": "Linkedin", "weekCount": [{"week": 5, "count": 3}, {"week": 4, "count": 3}, {"week": 3, "count": 0}, {"week": 2, "count": 3}, {"week": 1, "count": 3}, {"week": 0, "count": 2}]}
 
-]	
+ {"source":"Advertisement","week_count":{"week":2,"count":0}},{"source":"Avvo","week_count":{"week":2,"count":2}},{"source":"Event","week_count":{"week":2,"count":0}},{"source":"Facebook","week_count":{"week":2,"count":1}},{"source":"LinkedIn","week_count":{"week":2,"count":1}},{"source":"Referral","week_count":{"week":2,"count":0}},{"source":"Twitter","week_count":{"week":2,"count":0}},{"source":"Unassigned","week_count":{"week":2,"count":0}},{"source":"Website","week_count":{"week":2,"count":0}},{"source":"Yelp","week_count":{"week":2,"count":0}},
+ {"source":"Advertisement","week_count":{"week":3,"count":0}},{"source":"Avvo","week_count":{"week":3,"count":0}},{"source":"Event","week_count":{"week":3,"count":0}},{"source":"Facebook","week_count":{"week":3,"count":0}},{"source":"LinkedIn","week_count":{"week":3,"count":0}},{"source":"Referral","week_count":{"week":3,"count":0}},{"source":"Twitter","week_count":{"week":3,"count":0}},{"source":"Unassigned","week_count":{"week":3,"count":0}},{"source":"Website","week_count":{"week":3,"count":0}},{"source":"Yelp","week_count":{"week":3,"count":0}},
+ {"source":"Advertisement","week_count":{"week":4,"count":0}},{"source":"Avvo","week_count":{"week":4,"count":0}},{"source":"Event","week_count":{"week":4,"count":0}},{"source":"Facebook","week_count":{"week":4,"count":0}},{"source":"LinkedIn","week_count":{"week":4,"count":0}},{"source":"Referral","week_count":{"week":4,"count":0}},{"source":"Twitter","week_count":{"week":4,"count":0}},{"source":"Unassigned","week_count":{"week":4,"count":0}},{"source":"Website","week_count":{"week":4,"count":0}},{"source":"Yelp","week_count":{"week":4,"count":0}},
+ {"source":"Advertisement","week_count":{"week":5,"count":0}},{"source":"Avvo","week_count":{"week":5,"count":0}},{"source":"Event","week_count":{"week":5,"count":0}},{"source":"Facebook","week_count":{"week":5,"count":0}},{"source":"LinkedIn","week_count":{"week":5,"count":0}},{"source":"Referral","week_count":{"week":5,"count":0}},{"source":"Twitter","week_count":{"week":5,"count":0}},{"source":"Unassigned","week_count":{"week":5,"count":0}},{"source":"Website","week_count":{"week":5,"count":0}},{"source":"Yelp","week_count":{"week":5,"count":0}},
+ {"source":"Advertisement","week_count":{"week":6,"count":0}},{"source":"Avvo","week_count":{"week":6,"count":0}},{"source":"Event","week_count":{"week":6,"count":0}},{"source":"Facebook","week_count":{"week":6,"count":0}},{"source":"LinkedIn","week_count":{"week":6,"count":0}},{"source":"Referral","week_count":{"week":6,"count":0}},{"source":"Twitter","week_count":{"week":6,"count":0}},{"source":"Unassigned","week_count":{"week":6,"count":0}},{"source":"Website","week_count":{"week":6,"count":0}},{"source":"Yelp","week_count":{"week":6,"count":0}}
+
+ ]
+
+
+// [
+// 	{ "source": "Facebook", "weekCount": [{"week": 5, "count": 1}, {"week": 4, "count": 2}, {"week": 3, "count": 3}, {"week": 2, "count": 1}, {"week": 1, "count": 3}, {"week": 0, "count": 1}]},
+// 	{ "source": "Avvo", "weekCount": [{"week": 5, "count": 2}, {"week": 4, "count": 0}, {"week": 3, "count": 2}, {"week": 2, "count": 3}, {"week": 1, "count": 3}, {"week": 0, "count": 2}]},
+// 	{ "source": "Linkedin", "weekCount": [{"week": 5, "count": 3}, {"week": 4, "count": 3}, {"week": 3, "count": 0}, {"week": 2, "count": 3}, {"week": 1, "count": 3}, {"week": 0, "count": 2}]}
+
+// ]	
